@@ -93,3 +93,18 @@ function soChanCuoi() {
   chan += tong;
   document.getElementById("result").innerHTML = chan;
 }
+// 6. Đổi chỗ
+function doichoGiaTri() {
+  let inputPosition1 = +document.getElementById("inputPosition1").value;
+  let inputPosition2 = +document.getElementById("inputPosition2").value;
+  let index3 = 0;
+  let change = `MẢNG ĐÃ ĐỔI : `;
+  index3 = listNumber[inputPosition1];
+  listNumber[inputPosition1] = listNumber[inputPosition2];
+  listNumber[inputPosition2] = index3;
+  for (let i = 0; i < listNumber.length; i++) {
+    change += `[${listNumber[i]}]`;
+  }
+  document.getElementById("baiDoiCho").innerHTML = change;
+}
+// 7. Sắp xếp mảng theo thứ tự tăng dần.
