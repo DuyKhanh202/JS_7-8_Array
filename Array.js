@@ -79,7 +79,7 @@ function soChanCuoi() {
     document.getElementById("result").innerHTML = "Vui lòng nhập số vào mảng";
     return;
   }
-  let chan = `Số chẵn cuối cùng trong mảng : `;
+  var chan = `Số chẵn cuối cùng trong mảng : `;
   var tong = 0;
   for (var i = 0; i < listNumber.length; i++) {
     var number = listNumber[i];
@@ -95,16 +95,56 @@ function soChanCuoi() {
 }
 // 6. Đổi chỗ
 function doichoGiaTri() {
-  let inputPosition1 = +document.getElementById("inputPosition1").value;
-  let inputPosition2 = +document.getElementById("inputPosition2").value;
-  let index3 = 0;
-  let change = `MẢNG ĐÃ ĐỔI : `;
+  var inputPosition1 = +document.getElementById("inputPosition1").value;
+  var inputPosition2 = +document.getElementById("inputPosition2").value;
+  var index3 = 0;
+  var change = `MẢNG ĐÃ ĐỔI : `;
   index3 = listNumber[inputPosition1];
   listNumber[inputPosition1] = listNumber[inputPosition2];
   listNumber[inputPosition2] = index3;
-  for (let i = 0; i < listNumber.length; i++) {
+  for (var i = 0; i < listNumber.length; i++) {
     change += `[${listNumber[i]}]`;
   }
   document.getElementById("baiDoiCho").innerHTML = change;
 }
 // 7. Sắp xếp mảng theo thứ tự tăng dần.
+function sort() {
+  // Kiểm tra xem mảng listNumber có rỗng hay không
+  if (listNumber.length === 0) {
+    document.getElementById("result").innerHTML = "Vui lòng nhập số vào mảng";
+    return;
+  }
+
+  // Biến lưu trữ kết quả sắp xếp
+  var sapXep = "Sắp Xếp Tăng Dần : ";
+  // Sắp xếp mảng theo thứ tự tăng dần
+  for (var i = 0; i < listNumber.length - 1; i++) {
+    for (var j = i + 1; j < listNumber.length; j++) {
+      // Đổi chỗ nếu phần tử phía trước lớn hơn phần tử phía sau
+      if (listNumber[i] > listNumber[j]) {
+        var temp = listNumber[i];
+        listNumber[i] = listNumber[j];
+        listNumber[j] = temp;
+      }
+    }
+  }
+  // Cập nhật kết quả sắp xếp
+  sapXep += listNumber.join(', ');
+  document.getElementById("result").innerHTML = sapXep;
+}
+function test_prime(n) {
+  if (n === 1 || n === 0) {  // Kiểm tra nếu n là 1 hoặc 0
+    return false;
+  }
+  if (n === 2) {// Kiểm tra nếu n là 2
+    return true;
+  }
+  // Kiểm tra nếu n chia hết cho bất kỳ số nào từ 2 đến n-1
+  for (var x = 2; x < n; x++) {
+    if (n % x === 0) {
+      return false;
+    }
+  }
+  // Nếu không chia hết cho số nào từ 2 đến n-1, n là số nguyên tố
+  return true;
+}
