@@ -148,3 +148,27 @@ function test_prime(n) {
   // Nếu không chia hết cho số nào từ 2 đến n-1, n là số nguyên tố
   return true;
 }
+// 8. Tìm số nguyên tố đầu tiên
+function timSoNguyenToDauTien() {
+  if (listNumber.length === 0) {
+    document.getElementById("result").innerHTML = "Vui lòng nhập số vào mảng";
+    return;
+  }
+
+  let firstPrime = 0;
+  let soHang = `SỐ NGUYÊN TỐ ĐẦU TIÊN TRONG MẢNG : `;
+
+  for (let i = 0; i < listNumber.length; i++) {
+    if (listNumber[i] > 0) {
+      if (test_prime(listNumber[i]) === true) {
+        firstPrime = listNumber[i];
+      }
+    }
+  }
+
+  if (firstPrime == 0) {
+    soHang = document.getElementById("result").innerHTML = -1;
+  }
+  soHang += firstPrime;
+  document.getElementById("result").innerHTML = soHang;
+}
