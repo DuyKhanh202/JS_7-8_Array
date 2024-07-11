@@ -155,10 +155,10 @@ function timSoNguyenToDauTien() {
     return;
   }
 
-  let firstPrime = 0;
-  let soHang = `SỐ NGUYÊN TỐ ĐẦU TIÊN TRONG MẢNG : `;
+  var firstPrime = 0;
+  var soHang = `SỐ NGUYÊN TỐ ĐẦU TIÊN TRONG MẢNG : `;
 
-  for (let i = 0; i < listNumber.length; i++) {
+  for (var i = 0; i < listNumber.length; i++) {
     if (listNumber[i] > 0) {
       if (test_prime(listNumber[i]) === true) {
         firstPrime = listNumber[i];
@@ -178,10 +178,10 @@ function demSoNguyenTo() {
     document.getElementById("result").innerHTML = "Vui lòng nhập số vào mảng";
     return;
   }
-  let countPrime = 0;
-  let soThuc = `Các Số Nguyên Trong Mảng : `;
+  var countPrime = 0;
+  var soThuc = `Các Số Nguyên Trong Mảng : `;
 
-  for (let i = 0; i < listNumber.length; i++) {
+  for (var i = 0; i < listNumber.length; i++) {
     if (listNumber[i] > 0) {
       if (test_prime(listNumber[i]) === true) {
         countPrime++;
@@ -190,4 +190,33 @@ function demSoNguyenTo() {
   }
   soThuc += countPrime;
   document.getElementById("result").innerHTML = soThuc;
+}
+// 10. So sánh số lượng âm dương
+function soSanhSoLuongAmDuong() {
+  if (listNumber.length === 0) {
+    document.getElementById("result").innerHTML = "Vui lòng nhập số vào mảng";
+    return;
+  }
+
+  var countPos = 0;
+  var countNev = 0;
+
+  for (var i = 0; i < listNumber.length; i++) {
+    if (listNumber[i] >= 0) {
+      countPos++;
+    } else {
+      countNev++;
+    }
+  }
+
+  var soSanh = "";
+  if (countPos > countNev) {
+    soSanh = "Số dương nhiều hơn";
+  } else if (countNev > countPos) {
+    soSanh = "Số âm nhiều hơn";
+  } else {
+    soSanh = "Dương và âm bằng nhau";
+  }
+
+  document.getElementById("result").innerHTML = soSanh;
 }
