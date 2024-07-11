@@ -172,3 +172,22 @@ function timSoNguyenToDauTien() {
   soHang += firstPrime;
   document.getElementById("result").innerHTML = soHang;
 }
+//      9. Đếm số nguyên tố
+function demSoNguyenTo() {
+  if (listNumber.length === 0) {
+    document.getElementById("result").innerHTML = "Vui lòng nhập số vào mảng";
+    return;
+  }
+  let countPrime = 0;
+  let soThuc = `Các Số Nguyên Trong Mảng : `;
+
+  for (let i = 0; i < listNumber.length; i++) {
+    if (listNumber[i] > 0) {
+      if (test_prime(listNumber[i]) === true) {
+        countPrime++;
+      }
+    }
+  }
+  soThuc += countPrime;
+  document.getElementById("result").innerHTML = soThuc;
+}
