@@ -10,21 +10,28 @@
     />
   </head>
   <body>
-    <div class="container">
-      <h1 class="text-center mt-3">Bài Tập Mảng Js Buổi 7-8</h1>
-      <div class="input-group mb-3">
-        <input
-          type="text"
-          id="txtNumber"
-          class="form-control"
-          placeholder="Vui lòng nhập số"
-          aria-label="Username"
-          aria-describedby="basic-addon1"
-        />
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Vui lòng nhập số"
+              id="txtNumber"
+            />
+            <button
+              class="btn btn-outline-primary"
+              id="themSo"
+              onclick="themSo()"
+            >
+              Thêm Số
+            </button>
+          </div>
+        </div>
       </div>
-        <button class="btn btn-outline-info" id="themSo" onclick="themSo()">
-          Thêm Số
-        </button>
+
+      <div class="mt-2 mx-5">
         <button class="btn btn-success" id="soDuong" onclick="tongSoDuong()">
           1. Tổng số dương
         </button>
@@ -35,51 +42,70 @@
           3. Số nhỏ nhất
         </button>
         <button class="btn btn-dark" id="soDuongMin" onclick="soMinDuong()">
-         4. Số dương nhỏ nhất
+          4. Số dương nhỏ nhất
         </button>
         <button class="btn btn-warning" id="soChanCuoi" onclick="soChanCuoi()">
-          5.Số chẵn cuối cùng
+          5. Số chẵn cuối cùng
         </button>
         <button class="btn btn-danger text-white" id="sort" onclick="sort()">
-        7. Sắp xếp tăng dần
+          7. Sắp xếp tăng dần
         </button>
-        <button class="btn btn-info" id="timSoNguyenTo" onclick="timSoNguyenToDauTien()">
-        8.Tìm số nguyên tố đầu tiên
+        <button
+          class="btn btn-info"
+          id="timSoNguyenTo"
+          onclick="timSoNguyenToDauTien()"
+        >
+          8. Tìm số nguyên tố đầu tiên
         </button>
-        <button class="btn btn-success mt-2" id="demSoNguyenTo" onclick="demSoNguyenTo()">
-        9. Đếm số nguyên tố
+        <button
+          class="btn btn-success mt-2"
+          id="demSoNguyenTo"
+          onclick="demSoNguyenTo()"
+        >
+          9. Đếm số nguyên tố
         </button>
-        <button class="btn btn-danger mt-2" id="soSanhSoLuongAmDuong" onclick="soSanhSoLuongAmDuong()">
-        10. So sánh số lượng âm dương
+        <button
+          class="btn btn-danger mt-2"
+          id="soSanhSoLuongAmDuong"
+          onclick="soSanhSoLuongAmDuong()"
+        >
+          10. So sánh số lượng âm dương
         </button>
       </div>
-      <div class="container"> 
-         <p class="text-secondary text-black  mt-3" id="resultArray">Input Mảng:</p>
-          <p class="text-secondary text-black  mt-3" id="result">Kết Quả.....</p>
-     </div>  
+
+      <div class="container">
+        <p class="text-secondary text-black mt-3" id="resultArray">
+          Input Mảng:
+        </p>
+        <p class="text-secondary text-black mt-3" id="result">Kết Quả.....</p>
+      </div>
+
+      <div class="container mt-3">
+        <h3>
+          6. Đổi chỗ 2 giá trị trong mảng theo vị trí (Cho nhập vào 2 vị trí
+          muốn đổi chỗ giá trị).
+        </h3>
+        <label for="inputPosition1" class="form-label">Vị trí 1:</label>
+        <input
+          type="number"
+          class="form-control"
+          id="inputPosition1"
+          placeholder="Vị trí 1"
+        />
+        <label for="inputPosition2" class="form-label mt-2">Vị trí 2:</label>
+        <input
+          type="number"
+          class="form-control"
+          id="inputPosition2"
+          placeholder="Vị trí 2"
+        />
+        <button class="btn btn-primary mt-2" onclick="doichoGiaTri()">
+          Đổi chỗ 2 giá trị
+        </button>
+        <p class="bg-info text-black p-3 mt-3" id="baiDoiCho"></p>
+      </div>
     </div>
-    <!-- bai 6 -->
-    <div class="container">
-     <h3>6. Đổi chỗ 2 giá trị trong mảng theo vị trí (Cho nhập vào 2 vị trí muốn đổi chỗ giá trị).</h3>
-     <label for="inputPosition1" class="form-label">Vị trí 1:</label>
-     <input
-       type="number"
-       class="form-control"
-       id="inputPosition1"
-       placeholder="Vị trí 1"
-     />
-     <label for="inputPosition2" class="form-label mt-2">Vị trí 2:</label>
-     <input
-       type="number"
-       class="form-control"
-       id="inputPosition2"
-       placeholder="Vị trí 2"
-     />
-     <button class="btn btn-primary mt-2" onclick="doichoGiaTri()">
-       Đổi chỗ 2 giá trị
-     </button>
-     <p class="bg-info text-black p-3 mt-3" id="baiDoiCho"></p>
-   </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
