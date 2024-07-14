@@ -133,22 +133,22 @@ function sort() {
   document.getElementById("result").innerHTML = sapXep;
 }
 // hàm kiểm tra số nguyên n có phải là số nguyên tố hay không áp dụng bài 8 9
-function test_prime(n) {
-  if (n === 1 || n === 0) {  // Kiểm tra nếu n là 1 hoặc 0
-    return false;
-  }
-  if (n === 2) {// Kiểm tra nếu n là 2
-    return true;
-  }
-  // Kiểm tra nếu n chia hết cho bất kỳ số nào từ 2 đến n-1
-  for (var x = 2; x < n; x++) {
-    if (n % x === 0) {
+  function test_prime(n) {
+    if (n === 1 || n === 0) {  // Kiểm tra nếu n là 1 hoặc 0
       return false;
     }
+    if (n === 2) {// Kiểm tra nếu n là 2
+      return true;
+    }
+    // Kiểm tra nếu n chia hết cho bất kỳ số nào từ 2 đến n-1
+    for (var x = 2; x < n; x++) {
+      if (n % x === 0) {
+        return false;
+      }
+    }
+    // Nếu không chia hết cho số nào từ 2 đến n-1, n là số nguyên tố
+    return true;
   }
-  // Nếu không chia hết cho số nào từ 2 đến n-1, n là số nguyên tố
-  return true;
-}
 // 8. Tìm số nguyên tố đầu tiên
 function timSoNguyenToDauTien() {
   if (listNumber.length === 0) {
@@ -174,24 +174,23 @@ function timSoNguyenToDauTien() {
   document.getElementById("result").innerHTML = soHang;
 }
 //      9. Đếm số nguyên tố
-function demSoNguyenTo() {
+function demSoNguyen() {
   if (listNumber.length === 0) {
     document.getElementById("result").innerHTML = "Vui lòng nhập số vào mảng";
     return;
   }
-  var countPrime = 0;
-  var soThuc = `Các Số Nguyên Trong Mảng : `;
+  var countInteger = 0;
+  var soNguyen = `Các Số Nguyên Trong Mảng : `;
 
   for (var i = 0; i < listNumber.length; i++) {
-    if (listNumber[i] > 0) {
-      if (test_prime(listNumber[i]) === true) {
-        countPrime++;
-      }
+    if (Number.isInteger(listNumber[i])) {
+      countInteger++;
     }
   }
-  soThuc += countPrime;
-  document.getElementById("result").innerHTML = soThuc;
+  soNguyen += countInteger;
+  document.getElementById("result").innerHTML = soNguyen;
 }
+
 // 10. So sánh số lượng âm dương
 function soSanhSoLuongAmDuong() {
   if (listNumber.length === 0) {
