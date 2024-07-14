@@ -132,6 +132,7 @@ function sort() {
   sapXep += listNumber.join(', ');
   document.getElementById("result").innerHTML = sapXep;
 }
+// hàm kiểm tra số nguyên n có phải là số nguyên tố hay không áp dụng bài 8 9
 function test_prime(n) {
   if (n === 1 || n === 0) {  // Kiểm tra nếu n là 1 hoặc 0
     return false;
